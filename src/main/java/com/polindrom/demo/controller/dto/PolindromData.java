@@ -15,5 +15,5 @@ import java.util.List;
 public class PolindromData {
     private Integer number;
     private Integer count;
-    private List<Integer> listPolindroms = new ArrayList<>();
+    private Integer[] listPolindroms;
 }

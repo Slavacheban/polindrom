@@ -9,8 +9,6 @@ import lombok.experimental.Accessors;
 import javax.annotation.PostConstruct;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
@@ -23,7 +21,7 @@ public class PolindromDataEntity extends BaseEntity {
     @Column(name = "count")
     private Integer count;
     @Column(name = "list_polindroms")
-    private List<Integer> listPolindroms = new ArrayList<>();;
+    private Integer[] listPolindroms;
 
     @PostConstruct
     private void initList() {

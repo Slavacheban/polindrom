@@ -4,15 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PolindromUtils {
-    public static List<Integer> getPolindroms(int N, int count) {
-        List<Integer> list = new ArrayList<>();
+    public static Integer[] getPolindroms(int N, int count) {
+        Integer[] ii = new Integer[count];
+        int j = 0;
         for (int i = N; i < Integer.MAX_VALUE; i++) {
             StringBuilder sb = new StringBuilder(Integer.toString(N));
             StringBuilder revers = sb.reverse();
-            if(sb.equals(revers) && list.size() < count) {
-                list.add(N);
+            if(sb.equals(revers) && ii.length < count) {
+                ii[j++] = i;
             }
         }
-        return list;
+        return ii;
     }
 }
