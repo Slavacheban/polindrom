@@ -9,18 +9,16 @@ import java.util.stream.Collectors;
 
 @Component
 public class PolindromDataTransformer {
-    PolindromData buildPolindromData(PolindromDataEntity entity) {
-        return new PolindromData().setNumber(entity.getNumber()).setCount(entity.getCount())
-                .setListPolindroms(entity.getListPolindroms());
+    public PolindromData buildPolindromData(PolindromDataEntity entity) {
+        return new PolindromData().setNumber(entity.getNumber()).setPolindrom(entity.getPolindrom());
     }
 
-    List<PolindromData> buildPolindromDatas(List<PolindromDataEntity> entities) {
+    public List<PolindromData> buildPolindromDatas(List<PolindromDataEntity> entities) {
         return entities.stream().map(this::buildPolindromData).collect(Collectors.toList());
     }
 
-    PolindromDataEntity buildEntity (PolindromData polindromData) {
+    public PolindromDataEntity buildEntity (PolindromData polindromData) {
         return new PolindromDataEntity().setNumber(polindromData.getNumber())
-                .setCount(polindromData.getCount())
-                .setListPolindroms(polindromData.getListPolindroms());
+                .setPolindrom(polindromData.getPolindrom());
     }
 }
